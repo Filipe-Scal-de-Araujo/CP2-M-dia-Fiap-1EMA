@@ -5,7 +5,7 @@
     "colab": {
       "private_outputs": true,
       "provenance": [],
-      "authorship_tag": "ABX9TyMmYefVE/MlqjJO1qb1JOsr",
+      "authorship_tag": "ABX9TyNAojNUYTl1Ttd7vDKOah+P",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -51,15 +51,21 @@
         "MCS = (CS1 + CS2)/2\n",
         "print(f\"Média do Challenger Sprints: {MCS:.1f}\")\n",
         "\n",
-        "GS = imput(\"Fais a Global Solution? \")\n",
-        "if GS == \"Sim\":\n",
-        "  GSN = float(\"Insira a nota da Global Solution \")\n",
+        "GS = str(input(\"Fais a Global Solution? \"))\n",
+        "nf = (6-(MCP*2)-(MCS*2))/10\n",
+        "if nf < 0:\n",
+        "  nf1 = nf*(-1)\n",
+        "else:\n",
+        "  nf1 = nf*1\n",
+        "print(f\"Falta {nf1} de notas para passar de ano\")\n",
+        "if GS == \"S\":\n",
+        "  GSN = float(input(\"Insira a nota da Global Solution \"))\n",
         "  print(f\"Nota da Global Solution: {GSN:.1f}\")\n",
         "elif GS == \"N\":\n",
         "  GSS = float(input(\"Insira a nota da Substitutiva da Global Solution \"))\n",
         "  print(f\"Nota da Substitutiva da Global Solution: {GSS:.1f}\")\n",
         "\n",
-        "MF1 = (MCP*2) + (MCS*2) + (GSN*2)/10\n",
+        "MF1 = ((MCP*2) + (MCS*2) + (GSN*6))/10\n",
         "print(f\"Média Final: {MF1:.1f}\")"
       ]
     },
@@ -82,7 +88,13 @@
         "MCS = (CS1 + CS2)/2\n",
         "print(f\"Média do Challenger Sprints: {MCS:.1f}\")\n",
         "\n",
-        "GS = imput(\"Fais a Global Solution? \")\n",
+        "GS = str(input(\"Fais a Global Solution? \"))\n",
+        "nf = (6-(MCP*2)-(MCS*2))/10\n",
+        "if nf < 0:\n",
+        "  nf1 = nf*(-1)\n",
+        "else:\n",
+        "  nf1 = nf*1\n",
+        "print(f\"Falta {nf1} de notas para passar de ano\")\n",
         "if GS == \"Sim\":\n",
         "  GSN = float(\"Insira a nota da Global Solution \")\n",
         "  print(f\"Nota da Global Solution: {GSN:.1f}\")\n",
@@ -90,8 +102,8 @@
         "  GSS = float(input(\"Insira a nota da Substitutiva da Global Solution \"))\n",
         "  print(f\"Nota da Substitutiva da Global Solution: {GSS:.1f}\")\n",
         "\n",
-        "MF2 = (MCP*2) + (MCS*2) + (GSN*2)/10\n",
-        "print(f\"Média Final: {MF1:.1f}\")"
+        "MF2 = ((MCP*2) + (MCS*2) + (GSN*6))/10\n",
+        "print(f\"Média Final: {MF2:.1f}\")"
       ],
       "metadata": {
         "id": "bu6aMhOO_WEk"
@@ -102,7 +114,7 @@
     {
       "cell_type": "code",
       "source": [
-        "MFF = (MF1*4) + (MF2*6)/10\n",
+        "MFF = ((MF1*4) + (MF2*6))/10\n",
         "print(f\"Média Final Final: {MFF:.1f}\")\n",
         "if MFF >= 6.0:\n",
         "  print(\"Aprovado\")\n",
@@ -111,11 +123,11 @@
         "  E = float(input(\"Insira a nota do Exame \"))\n",
         "  MFFF = (MFF + E)/2\n",
         "  if MFFF >= 6.0:\n",
-        "  print(\"Aprovado\")\n",
-        "  print(f\"Média Final Final Final: {MFFF:.1f}\")\n",
+        "    print(\"Aprovado\")\n",
+        "    print(f\"Média Final Final Final: {MFFF:.1f}\")\n",
         "  elif 4.0 <= MFFF < 6.0:\n",
-        "  print(\"Reprovado\")\n",
-        "  print(f\"Média Final Final Final: {MFFF:.1f}\")\n",
+        "    print(\"Reprovado\")\n",
+        "    print(f\"Média Final Final Final: {MFFF:.1f}\")\n",
         "else:\n",
         "  print(\"Retido DP\")\n",
         "  print(f\"Média Final Final: {MFF:.1f}\")"
